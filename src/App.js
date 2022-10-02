@@ -1,9 +1,10 @@
 import "./styles.css";
-import React, { useState } from "react";
+import React, {
+  useState
+} from "react";
 
 const gameLibrary = {
-  OpenWorld: [
-    {
+  OpenWorld: [{
       name: "Grand Theft Auto 5",
       metascore: "96"
     },
@@ -13,70 +14,107 @@ const gameLibrary = {
     }
   ],
 
-  FPS: [
-    {
+  FPS: [{
       name: "Call of Duty : Vanguard",
       metascore: "73"
     },
 
-    { name: "Battlefield 2042", metascore: "68" }
+    {
+      name: "Battlefield 2042",
+      metascore: "68"
+    }
   ]
 };
 export default function App() {
   const [selectedGenre, setGenre] = useState("FPS");
+
   function genreClickHandler(genre) {
     setGenre(genre);
   }
-  return (
-    <div className="App">
-      <h1> GoodGames </h1>
-      <p style={{ fontSize: "smaller" }}>
-        {" "}
-        Checkout my favorite games. Select a genre to get started{" "}
-      </p>
+  return ( <
+    div className = "App" >
+    <h1 > GoodGames </h1> 
+    <p style = {
+      {
+        fontSize: "smaller"
+      }
+    } >
+    Checkout my favorite games.Select a genre to get started 
+    </p>
 
-      <div>
-        {Object.keys(gameLibrary).map((genre) => (
-          <button
-            onClick={() => genreClickHandler(genre)}
-            style={{
-              cursor: "pointer",
-              background: "#E5E7EB",
-              borderRadius: "0.5rem",
-              padding: "0.5rem  1rem",
-              border: "1px solid black",
-              margin: "1rem 0.3rem"
-            }}
-          >
-            {genre}
-          </button>
-        ))}
-      </div>
-      <hr />
-      <div style={{ textAlign: "left" }}>
-        <ul style={{ paddingInlineStart: "0" }}>
-          {gameLibrary[selectedGenre].map((book) => (
-            <li
-              key={book.name}
-              style={{
-                listStyle: "none",
-                padding: "1rem",
-                border: "1px solid #D1D5DB",
-                width: "70%",
-                margin: "1rem 0rem",
-                borderRadius: "0.5rem"
-              }}
-            >
-              {" "}
-              <div style={{ fontSize: "larger" }}> {book.name} </div>
-              <div style={{ fontSize: "smaller" }}>
-                {" "}
-                Metascore:{book.metascore}{" "}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div> { Object.keys(gameLibrary).map((genre) => ( 
+      <button onClick = {() => genreClickHandler(genre)
+        }
+        style = {
+          {
+            cursor: "pointer",
+            background: "#E5E7EB",
+            borderRadius: "0.5rem",
+            padding: "0.5rem  1rem",
+            border: "1px solid black",
+            margin: "1rem 0.3rem"
+          }
+        } >
+        {
+          genre
+        } </button>
+      ))
+    } </div> <
+    hr / >
+    <div style = {
+      {
+        textAlign: "left"
+      }
+    } >
+    <ul style = {
+      {
+        paddingInlineStart: "0"
+      }
+    } > {
+      gameLibrary[selectedGenre].map((game) => ( 
+        
+        <li key = {
+          game.name
+        }
+        style = {
+          {
+            listStyle: "none",
+            padding: "1rem",
+            border: "1px solid #D1D5DB",
+            width: "70%",
+            margin: "1rem 0rem",
+            borderRadius: "0.5rem"
+          }
+        } >
+        {
+          " "
+        } 
+    <div style = {
+          {
+            fontSize: "larger"
+          }
+        } > {
+          game.name
+        } 
+      </div> 
+        
+      <div style = {
+          {
+            fontSize: "smaller"
+          }
+        } > {
+          " "
+        }
+        Metascore: {
+          game.metascore
+        } {
+          " "
+        } </div> 
+        </li>
+      ))
+    } 
+    </ul> 
+    </div> 
     </div>
   );
 }
