@@ -11,7 +11,22 @@ const gameLibrary = {
     {
       name: "Mafia 3",
       metascore: "68"
+    },
+    {
+      name: "Assassin's Creed Valhalla",
+      metascore: "84"
+    },
+    {
+      name: "Days Gone",
+      metascore: "76"
+
+    },
+     {
+      name: "Ghost of Tsuhima",
+      metascore: "83"
     }
+
+
   ],
 
   FPS: [{
@@ -33,17 +48,21 @@ export default function App() {
   }
   return ( <
     div className = "App" >
-    <h1 > GoodGames </h1> 
-    <p style = {
+    <
+    h1 > GoodGames < /h1>  <
+    p style = {
       {
         fontSize: "smaller"
       }
     } >
-    Checkout my favorite games.Select a genre to get started 
-    </p>
+    Checkout my favorite games.Select a genre to get started <
+    /p>
 
-    <div> { Object.keys(gameLibrary).map((genre) => ( 
-      <button onClick = {() => genreClickHandler(genre)
+    <
+    div > {
+      Object.keys(gameLibrary).map((genre) => ( <
+        button onClick = {
+          () => genreClickHandler(genre)
         }
         style = {
           {
@@ -52,28 +71,31 @@ export default function App() {
             borderRadius: "0.5rem",
             padding: "0.5rem  1rem",
             border: "1px solid black",
-            margin: "1rem 0.3rem"
+            margin: "1rem 0.3rem",
+            margin: "auto",
           }
-        } >
-        {
+        } > {
           genre
-        } </button>
+        } < /button>
       ))
-    } </div> <
+    } < /div> <
     hr / >
-    <div style = {
+    <
+    div style = {
       {
         textAlign: "left"
       }
     } >
-    <ul style = {
+    <
+    ul style = {
       {
         paddingInlineStart: "0"
       }
     } > {
-      gameLibrary[selectedGenre].map((game) => ( 
-        
-        <li key = {
+      gameLibrary[selectedGenre].map((game) => (
+
+        <
+        li key = {
           game.name
         }
         style = {
@@ -85,20 +107,20 @@ export default function App() {
             margin: "1rem 0rem",
             borderRadius: "0.5rem"
           }
-        } >
-        {
+        } > {
           " "
-        } 
-    <div style = {
+        } <
+        div style = {
           {
             fontSize: "larger"
           }
         } > {
           game.name
-        } 
-      </div> 
-        
-      <div style = {
+        } <
+        /div> 
+
+        <
+        div style = {
           {
             fontSize: "smaller"
           }
@@ -109,12 +131,12 @@ export default function App() {
           game.metascore
         } {
           " "
-        } </div> 
-        </li>
+        } < /div>  < /
+        li >
       ))
-    } 
-    </ul> 
-    </div> 
-    </div>
+    } <
+    /ul>  < /
+    div > <
+    /div>
   );
 }
